@@ -1,9 +1,3 @@
-import React from 'react';
+import DefaultLayout from './DefaultLayout';
 
-// import { Container } from './styles';
-
-export default function DefaultLayout() {
-  return (
-    <div>LAYOUT</div>
-  );
-}
+export default DefaultLayout;
