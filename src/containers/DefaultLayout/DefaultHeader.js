@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import AvatarUser from '../../assets/img/uneb/user_avatar.png'
+import AvatarUser from '../../assets/img/uneb/user_avatar.png';
 import {
-
   UncontrolledDropdown,
   DropdownItem,
   DropdownMenu,
@@ -12,11 +11,7 @@ import {
 } from 'reactstrap';
 import PropTypes from 'prop-types';
 
-import {
-
-  AppSidebarToggler,
-} from '@coreui/react';
-
+import { AppSidebarToggler } from '@coreui/react';
 
 const propTypes = {
   children: PropTypes.node,
@@ -26,7 +21,6 @@ const defaultProps = {};
 
 class DefaultHeader extends Component {
   render() {
-    // eslint-disable-next-line
     const { children, ...attributes } = this.props;
 
     return (
@@ -36,23 +30,22 @@ class DefaultHeader extends Component {
 
         <Nav className="ml-auto" navbar>
           <NavItem className="px-3">
-              <NavLink to="/dashboard" className="nav-link">
-                Dashboard
-              </NavLink>
-            </NavItem>
-            <NavItem className="px-3">
-              <Link to="/users" className="nav-link">
-                Users
-              </Link>
-            </NavItem>
-
+            <NavLink to="/dashboard" className="nav-link">
+              Dashboard
+            </NavLink>
+          </NavItem>
+          <NavItem className="px-3">
+            <Link to="/users" className="nav-link">
+              Users
+            </Link>
+          </NavItem>
 
           <UncontrolledDropdown nav direction="down">
             <DropdownToggle nav>
               <img
                 src={AvatarUser}
                 className="img-avatar"
-               // alt="admin@bootstrapmaster.com"
+                // alt="admin@bootstrapmaster.com"
               />
             </DropdownToggle>
             <DropdownMenu right>

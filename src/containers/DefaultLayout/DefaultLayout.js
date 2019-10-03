@@ -3,9 +3,7 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import * as router from 'react-router-dom';
 import { Container } from 'reactstrap';
 
-
 import {
-
   AppFooter,
   AppHeader,
   AppSidebar,
@@ -20,10 +18,8 @@ import {
 import navigation from '../../_nav';
 // routes config
 import routes from '../../routes';
-import DefaultFooter  from './DefaultFooter'
-import DefaultHeader  from './DefaultHeader'
-
-
+import DefaultFooter from './DefaultFooter';
+import DefaultHeader from './DefaultHeader';
 
 class DefaultLayout extends Component {
   loading = () => (
@@ -38,7 +34,6 @@ class DefaultLayout extends Component {
   render() {
     return (
       <div className="app">
-
         <AppHeader fixed>
           <Suspense fallback={this.loading()}>
             <DefaultHeader onLogout={e => this.signOut(e)} />
@@ -46,18 +41,19 @@ class DefaultLayout extends Component {
         </AppHeader>
 
         <div className="app-body">
-
           <AppSidebar fixed display="lg">
             <AppSidebarHeader />
             <AppSidebarForm />
             <Suspense>
-            <AppSidebarNav navConfig={navigation} {...this.props} router={router}/>
+              <AppSidebarNav
+                navConfig={navigation}
+                {...this.props}
+                router={router}
+              />
             </Suspense>
             <AppSidebarFooter />
             <AppSidebarMinimizer />
           </AppSidebar>
-
-
 
           <main className="main">
             <AppBreadcrumb appRoutes={routes} router={router} />
@@ -87,7 +83,6 @@ class DefaultLayout extends Component {
             <DefaultFooter />
           </Suspense>
         </AppFooter>
-
       </div>
     );
   }
